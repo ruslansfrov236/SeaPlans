@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seaplan.entity", "seaplan.entity\seaplan.entity.csproj", "{5A28CF7D-526A-4A28-A6AA-BEDD9EBA01E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seaplan.data", "seaplan.data\seaplan.data.csproj", "{04EF3D18-7410-4E22-8C86-BE185C4DFFFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seaplan.business", "seaplan.business\seaplan.business.csproj", "{332FD0EA-774B-478B-B5F7-78839C272439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seaplan.webapi", "seaplan.webapi\seaplan.webapi.csproj", "{697A69DC-0C1E-497E-BDD3-CB76529D4BF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A28CF7D-526A-4A28-A6AA-BEDD9EBA01E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A28CF7D-526A-4A28-A6AA-BEDD9EBA01E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A28CF7D-526A-4A28-A6AA-BEDD9EBA01E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A28CF7D-526A-4A28-A6AA-BEDD9EBA01E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04EF3D18-7410-4E22-8C86-BE185C4DFFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04EF3D18-7410-4E22-8C86-BE185C4DFFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04EF3D18-7410-4E22-8C86-BE185C4DFFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04EF3D18-7410-4E22-8C86-BE185C4DFFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{332FD0EA-774B-478B-B5F7-78839C272439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{332FD0EA-774B-478B-B5F7-78839C272439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{332FD0EA-774B-478B-B5F7-78839C272439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{332FD0EA-774B-478B-B5F7-78839C272439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697A69DC-0C1E-497E-BDD3-CB76529D4BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697A69DC-0C1E-497E-BDD3-CB76529D4BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697A69DC-0C1E-497E-BDD3-CB76529D4BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697A69DC-0C1E-497E-BDD3-CB76529D4BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

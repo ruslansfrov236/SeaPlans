@@ -1,0 +1,13 @@
+/home/ruslan/Documents/SeaPlans/seaplan.entity/bin/Debug/net8.0/seaplan.entity.deps.json
+/home/ruslan/Documents/SeaPlans/seaplan.entity/bin/Debug/net8.0/seaplan.entity.dll
+/home/ruslan/Documents/SeaPlans/seaplan.entity/bin/Debug/net8.0/seaplan.entity.pdb
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.csproj.AssemblyReference.cache
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.GeneratedMSBuildEditorConfig.editorconfig
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.AssemblyInfoInputs.cache
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.AssemblyInfo.cs
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.csproj.CoreCompileInputs.cache
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.sourcelink.json
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.dll
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/refint/seaplan.entity.dll
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/seaplan.entity.pdb
+/home/ruslan/Documents/SeaPlans/seaplan.entity/obj/Debug/net8.0/ref/seaplan.entity.dll

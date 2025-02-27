@@ -1,0 +1,15 @@
+global using seaplan.data.Repository;
+global using seaplan.data.Repository.Concrete;
+global using seaplan.data.Context;
+global using seaplan.entity.Entities.Identity;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Design;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using seaplan.entity;
+global using seaplan.entity.Entities;
+global using seaplan.entity.Entities.Common;
+global using Microsoft.AspNetCore.Identity;
+global using seaplan.entity.Entities.Enum;
+global using Microsoft.AspNetCore.Identity;

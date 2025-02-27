@@ -1,0 +1,6 @@
+@seaplan.webapi_HostAddress = http://localhost:5263
+
+GET {{seaplan.webapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

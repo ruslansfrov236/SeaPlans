@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "P2BhlHqk0BeGEXT/HGtmgL/53MaSTBkPy1RQPf02F8o=",
+  "Source": "seaplan.webapi",
+  "BasePath": "_content/seaplan.webapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
