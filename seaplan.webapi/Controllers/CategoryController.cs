@@ -18,23 +18,37 @@ public class CategoryController : ControllerBase
 
     [HttpGet]
     public async Task<IActionResult> Index()
-    => await _categoryService.GetAll().ContinueWith(t => Ok(t.Result));
-    
+    {
+        var category = await _categoryService.GetAll();
+        return Ok(category);
+    }
+
     [HttpGet("{id}")]
     public async Task<IActionResult> Index(string id)
-    =>await _categoryService.GetById(id).ContinueWith(t => Ok(t.Result));
-    
+    {
+        var category=  await _categoryService.GetById(id);
+        return Ok(category);
+    }
 
     [HttpPost]
     public async Task<IActionResult> Create(CreateCategoryVM model)
-    => await _categoryService.Create(model)
-            .ContinueWith(t => StatusCode((int)HttpStatusCode.Created, t.Result));
+    {
+        await _categoryService.Create(model);
+        return StatusCode((int)HttpStatusCode.Created);
+    }
 
     [HttpPut]
     public async Task<IActionResult> Update(UpdateCategoryVM model)
-        => await _categoryService.Update(model).ContinueWith(t => Ok(t.Result));
+    {
+        await _categoryService.Update(model);
+        return Ok();
+    }
 
     [HttpGet("delete/{id}")]
-    public async Task<IActionResult> Delete(string id) =>
-        await _categoryService.Delete(id).ContinueWith(t => Ok(t.Result));
+    public async Task<IActionResult> Delete(string id)
+    {
+        await _categoryService.Delete(id);
+        return Ok();
+    }
+    
 }

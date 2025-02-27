@@ -126,7 +126,7 @@ public class EmailService : IEmailService
                 </div>
                 <div class='email-footer'>
                     Best regards,<br>
-                    Notepad MMC
+                    SeaParl MMC
                 </div>
             </div>
         </body>
@@ -135,9 +135,9 @@ public class EmailService : IEmailService
         await SendMailAsync(to, "Password Reset Request", mailContent);
     }
 
-
-    public async Task CreateMessages(CreateMessagesVM model)
+    public async Task SendResponse(string to, string name)
     {
-        await SendMailAsync(model.Email, model.FullName, model.Comment);
+        var subject = "SeaPearl from Support Team";
+        await SendMailAsync(to, subject, name);
     }
 }

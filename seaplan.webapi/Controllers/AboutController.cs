@@ -19,26 +19,40 @@ public class AboutController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        return await _aboutService.GetAll().ContinueWith(a => Ok(a.Result));
+       var about =  await _aboutService.GetAll();
+
+       return Ok(about);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Index(string id)
-        => await _aboutService.GetById(id).ContinueWith(a => Ok(a.Result));
+    {
+        var about = await _aboutService.GetById(id);
+        return Ok(about);
+    }
 
 
     [HttpPost]
     public async Task<IActionResult> Create(CreateAboutVM model)
-    => await _aboutService.Create(model).ContinueWith(a => StatusCode((int)HttpStatusCode.Created, a.Result));
-    
+    {
+        await _aboutService.Create(model);
+        return StatusCode((int)HttpStatusCode.Created);
+    }
+
 
     [HttpPut]
     public async Task<IActionResult> Update(UpdateAboutVM model)
-    => await _aboutService.Update(model).ContinueWith(a => Ok(a.Result));
-    
+    {
+        await _aboutService.Update(model);
+        return Ok();
+
+    }
 
     [HttpGet("delete/{id}")]
     public async Task<IActionResult> Delete(string id)
-    => await _aboutService.Delete(id).ContinueWith(a => Ok(a.Result));
-    
+    {
+        await _aboutService.Delete(id);
+        return Ok();
+    }
+
 }

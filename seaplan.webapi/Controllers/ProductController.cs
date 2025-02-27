@@ -19,26 +19,37 @@ public class ProductController : ControllerBase
 
     [HttpGet]
     public async Task<IActionResult> Index()
-    => await _productService.GetAll().ContinueWith(a => Ok(a.Result));
-    
+    {
+     var product =   await _productService.GetAll();
+
+     return Ok(product);
+    }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Index(string id)
-    => await _productService.GetById(id).ContinueWith(a => Ok(a.Result));
-    
+    {
+    var product =    await _productService.GetById(id);
+    return Ok(product);
+    }
 
     [HttpPost]
     public async Task<IActionResult> Create(CreateProductVM model)
-    => await _productService.Create(model).ContinueWith(a => StatusCode((int)HttpStatusCode.Created, a.Result));
-    
+    {
+        await _productService.Create(model);
+        return Ok();
+    }
 
     [HttpPut]
     public async Task<IActionResult> Update(UpdateProductVM model)
-    => await _productService.Update(model).ContinueWith(a => Ok(a.Result));
-    
+    {
+        await _productService.Update(model);
+        return Ok();
+    }
 
     [HttpGet("delete/{id}")]
     public async Task<IActionResult> Delete(string id)
-    => await _productService.Delete(id).ContinueWith(a => Ok(a.Result));
-    
+    {
+        await _productService.Delete(id);
+        return Ok();
+    }
 }

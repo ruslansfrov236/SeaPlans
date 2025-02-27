@@ -28,27 +28,33 @@ public class HeaderController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> Index(string id)
     {
-        return await _headerService.GetById(id).ContinueWith(a => Ok(a.Result));
+        var header = await _headerService.GetById(id);
+        return Ok(header);
     }
+    
 
 
     [HttpPost]
     public async Task<IActionResult> Create(CreateHeaderVM model)
     {
-        return await _headerService.Create(model).ContinueWith(a => StatusCode((int)HttpStatusCode.Created, a.Result));
+         await _headerService.Create(model);
+         return StatusCode((int)HttpStatusCode.Created);
     }
 
 
     [HttpPut]
     public async Task<IActionResult> Update(UpdateHeaderVM model)
     {
-        return await _headerService.Update(model).ContinueWith(a => Ok(a.Result));
+      var header = await _headerService.Update(model);
+
+      return Ok(header);
     }
 
 
     [HttpGet("delete/{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-        return await _headerService.Delete(id).ContinueWith(a => Ok(a.Result));
+      await _headerService.Delete(id);
+      return Ok();
     }
 }

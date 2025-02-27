@@ -42,7 +42,8 @@ public static class ServiceRegistration
         services.AddScoped<IContactWriteRepository, ContactWriteRepository>();
         services.AddScoped<IOrderReadRepository, OrderReadRepository>();
         services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
-
+        services.AddScoped<IMessagesReadRepository, MessagesReadRepository>();
+        services.AddScoped<IMessagesWriteRepository, MessagesWriteRepository>();
         services.AddScoped<IProductReadRepository, ProductReadRepository>();
         services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
         services.AddScoped<IPaymentReadRepository, PaymentReadRepository>();
@@ -50,9 +51,8 @@ public static class ServiceRegistration
         services.AddScoped<IFacilitiesReadRepository, FacilitiesReadRepository>();
         services.AddScoped<IFacilitiesWriteRepository, FacilitiesWriteRepository>();
         services.AddScoped<IAboutReadRepository, AboutReadRepository>();
-        services
-            .AddScoped<IAboutWriteRepository,
-                AboutWriteRepository>(); // services.AddScoped<IProductFacilitiesWriteRepository, ProductFacilitiesWriteRepository>();
+        services.AddScoped<IAboutWriteRepository, AboutWriteRepository>();
+        services.AddScoped<IProductFacilitiesWriteRepository, ProductFacilitiesWriteRepository>();
         services.AddScoped<IProductFacilitiesReadRepository, ProductFacilitiesReadRepository>();
         services.AddScoped<IAboutHeaderReadRepository, AboutHeaderReadRepository>();
         services.AddScoped<IAboutHeaderWriteRepository, AboutHeaderWriteRepository>();
@@ -76,7 +76,6 @@ public static class ServiceRegistration
         services.AddScoped<IContactWriteRepository, ContactWriteRepository>();
         services.AddScoped<IOrderReadRepository, OrderReadRepository>();
         services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
-
         services.AddScoped<IProductReadRepository, ProductReadRepository>();
         services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
         services.AddScoped<IPaymentReadRepository, PaymentReadRepository>();
@@ -85,7 +84,6 @@ public static class ServiceRegistration
         services.AddScoped<IFacilitiesWriteRepository, FacilitiesWriteRepository>();
         services.AddScoped<IAboutReadRepository, AboutReadRepository>();
         services.AddScoped<IAboutWriteRepository, AboutWriteRepository>();
-
         services.AddScoped<ICategoryReadRepository, CategoryReadRepository>();
         services.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
     }

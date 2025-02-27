@@ -14,19 +14,27 @@ builder.Services.AddControllers(options => { options.Filters.Add<ValidationFilte
     {
         #region Create Validator
 
+        configuration.RegisterValidatorsFromAssemblyContaining<CreateRegistrationValidator>();
+
         configuration.RegisterValidatorsFromAssemblyContaining<CreateCategoryValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<CreateMessagesValidator>();
+
         configuration.RegisterValidatorsFromAssemblyContaining<CreateProductsValidator>();
-        configuration.RegisterValidatorsFromAssemblyContaining<CreateAboutValidator>();
         configuration.RegisterValidatorsFromAssemblyContaining<CreateHeaderValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<CreateRolesValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<CreateAboutValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<CreateLoginValidator>();
 
         #endregion
 
         #region Update Validator
 
         configuration.RegisterValidatorsFromAssemblyContaining<UpdateCategoryValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<UpdateMessagesValidator>();
         configuration.RegisterValidatorsFromAssemblyContaining<UpdateProductsValidator>();
-        configuration.RegisterValidatorsFromAssemblyContaining<UpdateAboutValidator>();
         configuration.RegisterValidatorsFromAssemblyContaining<UpdateHeaderValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<UpdateRolesValidator>();
+        configuration.RegisterValidatorsFromAssemblyContaining<UpdateAboutValidator>();
 
         #endregion
     })

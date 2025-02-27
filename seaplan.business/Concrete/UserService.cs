@@ -62,18 +62,16 @@ public class UserService : IUserService
         }
     }
 
+
     public async Task<string[]> GetRoleToUserAsync(string userIdOrName)
     {
-        var user = await _userManager.FindByIdAsync(userIdOrName);
-        if (user == null)
-            user = await _userManager.FindByNameAsync(userIdOrName);
-        if (user != null)
-        {
-            var userRoles = await _userManager.GetRolesAsync(user);
-            return userRoles.ToArray();
-        }
+        var user = await _userManager.FindByIdAsync(userIdOrName)
+                   ?? await _userManager.FindByNameAsync(userIdOrName);
 
-        throw new Exception("User not found ");
+        if (user == null)
+            throw new NotFoundException("User not found");
+
+        return (await _userManager.GetRolesAsync(user)).ToArray();
     }
 
 
