@@ -10,7 +10,7 @@ namespace seaplan.webapi.Controllers;
 [ApiController]
 public class RolesController : ControllerBase
 {
-    readonly private IRolesService _rolesService;
+    private readonly IRolesService _rolesService;
 
     public RolesController(IRolesService rolesService)
     {
@@ -31,15 +31,15 @@ public class RolesController : ControllerBase
         return Ok(roles);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create(CreateRolesVM model)
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] CreateRolesVM model)
     {
         await _rolesService.Create(model);
         return StatusCode((int)HttpStatusCode.Created);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(UpdateRolesVM model)
+    [HttpPut("update")]
+    public async Task<IActionResult> Update([FromBody] UpdateRolesVM model)
     {
         var roles = await _rolesService.Update(model);
         return Ok(roles);

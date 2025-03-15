@@ -26,19 +26,19 @@ public class CategoryController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> Index(string id)
     {
-        var category=  await _categoryService.GetById(id);
+        var category = await _categoryService.GetById(id);
         return Ok(category);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create(CreateCategoryVM model)
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] CreateCategoryVM model)
     {
         await _categoryService.Create(model);
         return StatusCode((int)HttpStatusCode.Created);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(UpdateCategoryVM model)
+    [HttpPut("update")]
+    public async Task<IActionResult> Update([FromBody] UpdateCategoryVM model)
     {
         await _categoryService.Update(model);
         return Ok();
@@ -50,5 +50,4 @@ public class CategoryController : ControllerBase
         await _categoryService.Delete(id);
         return Ok();
     }
-    
 }

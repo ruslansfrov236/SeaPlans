@@ -31,6 +31,17 @@ public class ProductService : IProductService
             .ToListAsync();
     }
 
+    public async Task<List<Products>> GetGroupProductCategory()
+    {
+        var product = await _productReadRepository.GetAll()
+            .Include(a => a.Category)
+            .GroupBy(a => a.CategoryId)
+            .Select(a => a.FirstOrDefault())
+            .ToListAsync();
+
+        return product;
+    }
+
     public async Task<Products> GetById(string id)
     {
         if (!Guid.TryParse(id, out var guid))

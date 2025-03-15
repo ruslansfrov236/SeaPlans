@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("seaplan.business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f0bd9d299016a0ad34a79d50e21ace5f77efce2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98ccfae1c567815aff69853de6c2a90bcd973704")]
 [assembly: System.Reflection.AssemblyProductAttribute("seaplan.business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("seaplan.business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

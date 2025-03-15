@@ -1,0 +1,49 @@
+﻿version: '3.8'
+
+services:
+  seaplan.webapi:
+    image: seaplan.webapi
+    build:
+      context: .
+      dockerfile: seaplan.webapi/Dockerfile
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./seaplan.webapi/wwwroot:/app/wwwroot
+    restart: always
+    environment:
+      - SQLSERVER_CONNECTION_STRING=Server=sqlserver,1433;Database=TaskDb;User ID=sa;Password=876.Rsc.;TrustServerCertificate=True;
+      - REDIS_CONNECTION_STRING=redis:6379
+    depends_on:
+      - sqlserver
+      - redis
+    networks:
+      - backend
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=876.Rsc.
+    ports:
+      - "1433:1433"
+    networks:
+      - backend
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+  seaplan.webapi-1:
+    image: seaplan.webapi-1
+    build:
+      context: .
+      dockerfile: seaplan.webapi/Dockerfile

@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "XGBZkFf7L6hntv2qkp+aUVwT0Uc6K3W8DZDPa4BmQ+E=",
+  "Source": "seaplan.webapi",
+  "BasePath": "_content/seaplan.webapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "seaplan.webapi/wwwroot",
+      "Source": "seaplan.webapi",
+      "ContentRoot": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/",
+      "BasePath": "_content/seaplan.webapi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

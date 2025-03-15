@@ -1292,7 +1292,7 @@
           }
         }
       },
-      "SixLabors.ImageSharp/3.1.6": {
+      "SixLabors.ImageSharp/3.1.7": {
         "type": "package",
         "compile": {
           "lib/net6.0/SixLabors.ImageSharp.dll": {
@@ -3503,10 +3503,10 @@
         "pipelines.sockets.unofficial.nuspec"
       ]
     },
-    "SixLabors.ImageSharp/3.1.6": {
-      "sha512": "dHQ5jugF9v+5/LCVHCWVzaaIL6WOehqJy6eju/0VFYFPEj2WtqkGPoEV9EVQP83dHsdoqYaTuWpZdwAd37UwfA==",
+    "SixLabors.ImageSharp/3.1.7": {
+      "sha512": "9fIOOAsyLFid6qKypM2Iy0Z3Q9yoanV8VoYAHtI2sYGMNKzhvRTjgFDHonIiVe+ANtxIxM6SuqUzj0r91nItpA==",
       "type": "package",
-      "path": "sixlabors.imagesharp/3.1.6",
+      "path": "sixlabors.imagesharp/3.1.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3515,7 +3515,7 @@
         "lib/net6.0/SixLabors.ImageSharp.dll",
         "lib/net6.0/SixLabors.ImageSharp.xml",
         "sixlabors.imagesharp.128.png",
-        "sixlabors.imagesharp.3.1.6.nupkg.sha512",
+        "sixlabors.imagesharp.3.1.7.nupkg.sha512",
         "sixlabors.imagesharp.nuspec"
       ]
     },
@@ -4609,10 +4609,11 @@
       "Microsoft.AspNetCore.Hosting >= 2.3.0",
       "Microsoft.AspNetCore.Http >= 2.3.0",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.3.0",
+      "Microsoft.AspNetCore.Http.Extensions >= 2.3.0",
       "Microsoft.Extensions.Caching.Abstractions >= 8.0.0",
       "Microsoft.Extensions.Caching.StackExchangeRedis >= 8.0.11",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 8.0.2",
-      "SixLabors.ImageSharp >= 3.1.6",
+      "SixLabors.ImageSharp >= 3.1.7",
       "seaplan.data >= 1.0.0",
       "seaplan.entity >= 1.0.0"
     ]
@@ -4681,6 +4682,10 @@
             "target": "Package",
             "version": "[2.3.0, )"
           },
+          "Microsoft.AspNetCore.Http.Extensions": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
           "Microsoft.Extensions.Caching.Abstractions": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -4695,7 +4700,7 @@
           },
           "SixLabors.ImageSharp": {
             "target": "Package",
-            "version": "[3.1.6, )"
+            "version": "[3.1.7, )"
           }
         },
         "imports": [
@@ -4714,7 +4719,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

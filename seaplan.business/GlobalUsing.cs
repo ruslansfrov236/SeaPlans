@@ -1,5 +1,6 @@
 global using System;
 global using FluentValidation;
+global using Microsoft.AspNetCore.Hosting;
 global using System.Collections.Generic;
 global using System.IO;
 global using System.Linq;
@@ -32,3 +33,11 @@ global using System.Net;
 global using System.Net.Mail;
 global using Microsoft.Extensions.Configuration;
 global using seaplan.business.ViewsModels.Messages;
+global using System.Text.Json;
+global using Microsoft.Extensions.Caching.Distributed;
+global using seaplan.business.ViewsModel.Auth;
+global using task.Webui.ViewModels.Auth;
+global using Microsoft.AspNetCore.Identity;
+global using seaplan.business.ViewsModels.Auth;
+global using seaplan.entity.Entities.Enum;
+global using seaplan.entity.Entities.Identity;

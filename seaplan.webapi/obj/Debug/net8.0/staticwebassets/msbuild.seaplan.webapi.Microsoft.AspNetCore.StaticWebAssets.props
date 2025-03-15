@@ -1,0 +1,52 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\image\7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>seaplan.webapi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/seaplan.webapi</BasePath>
+      <RelativePath>assets/image/7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\image\7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\image\9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>seaplan.webapi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/seaplan.webapi</BasePath>
+      <RelativePath>assets/image/9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\image\9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\image\ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>seaplan.webapi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/seaplan.webapi</BasePath>
+      <RelativePath>assets/image/ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\image\ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

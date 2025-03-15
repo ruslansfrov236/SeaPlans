@@ -2,10 +2,19 @@ namespace seaplan.business.Concrete;
 
 public class FileService : IFileService
 {
+    private readonly IWebHostEnvironment _env;
+
+    public FileService(IWebHostEnvironment env)
+    {
+        _env = env;
+    }
+
     public void Delete(string path)
     {
-        if (File.Exists(path))
-            File.Delete(path);
+        var fullpath = Path.Combine(_env.WebRootPath, "assets/image", path);
+
+        if (File.Exists(fullpath))
+            File.Delete(fullpath);
     }
 
     public bool CheckSize(IFormFile file, int maxSize)
@@ -21,10 +30,10 @@ public class FileService : IFileService
         foreach (var file in files)
         {
             var filename = $"{Guid.NewGuid()}_{file.FileName}";
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ui/temp_/", filename);
-            var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ui/image/", filename);
+            var tempPath = Path.Combine(_env.WebRootPath, "assets/temp" + file.FileName);
+            var imagePath = Path.Combine(_env.WebRootPath, "assets/image", filename);
             var pngPath = Path.ChangeExtension(imagePath, "png");
-            using (var fileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
+            using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.ReadWrite))
             {
                 await file.CopyToAsync(fileStream);
             }
@@ -45,7 +54,7 @@ public class FileService : IFileService
 
     public bool IsImage(IFormFile file)
     {
-        if (file == null || file.Length == 0) return false;
+        if (file.Length == 0) return false;
 
 
         if (!file.ContentType.StartsWith("image/")) return false;
@@ -62,8 +71,8 @@ public class FileService : IFileService
     public async Task<string> UploadAsync(IFormFile file)
     {
         var filename = $"{Guid.NewGuid()}_{Path.GetFileNameWithoutExtension(file.FileName)}.png";
-        var tempPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ui/temp_/", file.FileName);
-        var pngPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ui/image", filename);
+        var tempPath = Path.Combine(_env.WebRootPath, "assets/temp" + file.FileName);
+        var imagePath = Path.Combine(_env.WebRootPath, "assets/image", filename);
 
 
         using (var fileStream = new FileStream(tempPath, FileMode.Create, FileAccess.Write))
@@ -74,7 +83,7 @@ public class FileService : IFileService
 
         using (var image = await Image.LoadAsync(tempPath))
         {
-            await image.SaveAsync(pngPath, new PngEncoder());
+            await image.SaveAsync(imagePath, new PngEncoder());
         }
 
 

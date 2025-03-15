@@ -1,66 +1,53 @@
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
+namespace seaplan.business;
+
 public static class SecurityHelper
 {
-    private static readonly string secretKey = GenerateRandomKey();
-
-    private static string GenerateRandomKey()
+    // Bu metod istifadəçiyə unikal açar yaradacaq
+    public static string GenerateUserSecretKey(string userId)
     {
-        using (var rng = new RNGCryptoServiceProvider())
-        {
-            var keyBytes = new byte[32];
-            rng.GetBytes(keyBytes);
-            return Convert.ToBase64String(keyBytes).Substring(0, 32);
-        }
-    }
-
-    public static string HashCode(string code)
-    {
+        // İstifadəçi ID ilə açar yaradılır (uniqallığı təmin edir)
         using (var sha256 = SHA256.Create())
         {
-            var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(code));
-            return Convert.ToBase64String(bytes);
+            var userKeyBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(userId));
+            return Convert.ToBase64String(userKeyBytes).Substring(0, 32); // Açarın uzunluğunu 32 simvolla məhdudlaşdırırıq
         }
     }
 
-
-    public static string Encrypt(string text)
+    // Verifikasiya kodunu şifrələyən metod
+    public static string EncryptVerificationCode(string code, string userId)
     {
+        string secretKey = GenerateUserSecretKey(userId); // Hər istifadəçiyə fərqli açar yaradılır
+
         using (var aes = Aes.Create())
         {
             aes.Key = Encoding.UTF8.GetBytes(secretKey);
-            aes.IV = new byte[16];
+            aes.IV = new byte[16]; // Sabit IV istifadə edilir
 
             var encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
             var encrypted = encryptor.TransformFinalBlock(
-                Encoding.UTF8.GetBytes(text), 0, text.Length);
+                Encoding.UTF8.GetBytes(code), 0, code.Length);
             return Convert.ToBase64String(encrypted);
         }
     }
 
-
-    public static string Decrypt(string encryptedText)
+    // Verifikasiya kodunu açan metod
+    public static string DecryptVerificationCode(string encryptedCode, string userId)
     {
+        string secretKey = GenerateUserSecretKey(userId); 
+
         using (var aes = Aes.Create())
         {
             aes.Key = Encoding.UTF8.GetBytes(secretKey);
             aes.IV = new byte[16];
 
             var decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
-            var bytes = Convert.FromBase64String(encryptedText);
+            var bytes = Convert.FromBase64String(encryptedCode);
             var decrypted = decryptor.TransformFinalBlock(bytes, 0, bytes.Length);
             return Encoding.UTF8.GetString(decrypted);
-        }
-    }
-
-
-    public static string GenerateHMAC(string data)
-    {
-        using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(secretKey)))
-        {
-            var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(data));
-            return Convert.ToBase64String(hash);
         }
     }
 }

@@ -1,11 +1,3 @@
-using System.Text.Json;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Caching.Distributed;
-using seaplan.business.Abstract;
-using seaplan.business.ViewsModel.Auth;
-using seaplan.entity.Entities.Identity;
-using task.Webui.ViewModels.Auth;
-
 namespace seaplan.business.Concrete;
 
 public class VerificationCodeService : IVerificationCodeService
@@ -23,8 +15,9 @@ public class VerificationCodeService : IVerificationCodeService
     public async Task SaveVerificationCodeAsync(string userId, string code)
     {
         var cacheKey = $"VerificationCode_{userId}";
+        var encryptedCode = SecurityHelper.EncryptVerificationCode(code, userId);
 
-        var verificationCode = new VerificationCode(userId, code, DateTime.UtcNow.AddMinutes(60));
+        var verificationCode = new VerificationCode(userId, encryptedCode, DateTime.UtcNow.AddMinutes(60));
 
         var serializedData = JsonSerializer.Serialize(verificationCode);
 
@@ -43,13 +36,13 @@ public class VerificationCodeService : IVerificationCodeService
             throw new Exception("The verification code is incorrect or does not exist.");
 
         var cachedCode = JsonSerializer.Deserialize<VerificationCode>(cachedData);
-        if (cachedCode == null || cachedCode.Code != model.Code)
-            throw new Exception("The verification code is incorrect.");
+        if (cachedCode == null || cachedCode.Code != SecurityHelper.EncryptVerificationCode(model.Code, model.UserId))
+            throw new BadRequestException("The verification code is incorrect.");
 
         if (DateTime.UtcNow > cachedCode.ExpiryTime)
         {
             await Remove(model.UserId);
-            throw new Exception("The verification code has expired.");
+            throw new BadRequestException("The verification code has expired.");
         }
 
         var isConfirmed = await EmailConfiremed(cachedCode.UserId);
@@ -67,7 +60,7 @@ public class VerificationCodeService : IVerificationCodeService
     public async Task<bool> EmailConfiremed(string userId)
     {
         var user = await _userManager.FindByIdAsync(userId)
-                   ?? throw new Exception("User not found");
+                   ?? throw new NotFoundException("User not found");
 
         var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 

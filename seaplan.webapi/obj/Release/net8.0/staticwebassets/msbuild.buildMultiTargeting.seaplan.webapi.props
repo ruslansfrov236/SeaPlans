@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/seaplan.webapi.props" />
+</Project>

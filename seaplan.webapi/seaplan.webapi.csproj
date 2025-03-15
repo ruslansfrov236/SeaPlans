@@ -4,18 +4,43 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.12"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.13"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.13">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
+<PropertyGroup>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+</PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\seaplan.business\seaplan.business.csproj"/>
         <ProjectReference Include="..\seaplan.data\seaplan.data.csproj"/>
     </ItemGroup>
+<ItemGroup>
+    <Content Include="wwwroot\**\*">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+</ItemGroup>
+<PropertyGroup>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+</PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="wwwroot\assets\image\"/>
+        <Folder Include="wwwroot\assets\temp\"/>
+    </ItemGroup>
+
+    
 
 </Project>

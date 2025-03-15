@@ -31,30 +31,29 @@ public class HeaderController : ControllerBase
         var header = await _headerService.GetById(id);
         return Ok(header);
     }
-    
 
 
-    [HttpPost]
-    public async Task<IActionResult> Create(CreateHeaderVM model)
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromForm] CreateHeaderVM model)
     {
-         await _headerService.Create(model);
-         return StatusCode((int)HttpStatusCode.Created);
+        await _headerService.Create(model);
+        return StatusCode((int)HttpStatusCode.Created);
     }
 
 
-    [HttpPut]
-    public async Task<IActionResult> Update(UpdateHeaderVM model)
+    [HttpPut("update")]
+    public async Task<IActionResult> Update([FromForm] UpdateHeaderVM model)
     {
-      var header = await _headerService.Update(model);
+        var header = await _headerService.Update(model);
 
-      return Ok(header);
+        return Ok(header);
     }
 
 
     [HttpGet("delete/{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-      await _headerService.Delete(id);
-      return Ok();
+        await _headerService.Delete(id);
+        return Ok();
     }
 }

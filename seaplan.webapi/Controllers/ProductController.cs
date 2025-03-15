@@ -1,4 +1,3 @@
-using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using seaplan.business.Abstract;
 using seaplan.business.ViewsModels.Products;
@@ -20,27 +19,27 @@ public class ProductController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-     var product =   await _productService.GetAll();
+        var product = await _productService.GetAll();
 
-     return Ok(product);
+        return Ok(product);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Index(string id)
     {
-    var product =    await _productService.GetById(id);
-    return Ok(product);
+        var product = await _productService.GetById(id);
+        return Ok(product);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create(CreateProductVM model)
+    [HttpPost("create")]
+    public async Task<IActionResult> Create([FromBody] CreateProductVM model)
     {
         await _productService.Create(model);
         return Ok();
     }
 
-    [HttpPut]
-    public async Task<IActionResult> Update(UpdateProductVM model)
+    [HttpPut("update")]
+    public async Task<IActionResult> Update([FromBody] UpdateProductVM model)
     {
         await _productService.Update(model);
         return Ok();

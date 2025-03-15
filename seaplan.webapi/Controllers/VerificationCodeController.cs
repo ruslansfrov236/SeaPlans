@@ -16,7 +16,7 @@ public class VerificationCodeController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(CreateVerifaction model)
+    public async Task<IActionResult> Create([FromBody]CreateVerifaction model)
     {
         var verifacation = _verificationCodeService.VerificationCodeAsync(model);
 

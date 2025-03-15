@@ -18,14 +18,14 @@ public class AuthController : ControllerBase
 
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login(CreateLoginVM model)
+    public async Task<IActionResult> Login([FromBody]CreateLoginVM model)
     {
         var login = await _authService.Login(model);
         return Ok(login);
     }
 
     [HttpPost("registration")]
-    public async Task<IActionResult> Registration(CreateRegistrationVM model)
+    public async Task<IActionResult> Registration([FromBody]CreateRegistrationVM model)
     {
         var login = await _authService.CreateUser(model);
         return Ok(login);

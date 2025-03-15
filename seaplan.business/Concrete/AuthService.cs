@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using seaplan.business.ViewsModels.Auth;
-using seaplan.entity.Entities.Enum;
-using seaplan.entity.Entities.Identity;
 
 namespace seaplan.business.Concrete;
 
@@ -84,8 +80,9 @@ public class AuthService : IAuthService
         if (result.Succeeded)
         {
             var token = await _tokenHandler.CreateAccessToken(model.accessTokenLifeTime, user);
-            await _userService.UpdateRefreshToken(token.RefreshToken, user, token.Expiration, 900);
-
+            var refreshToken =  _tokenHandler.DecryptRefreshToken(user.RefreshToken);
+            await _userService.UpdateRefreshToken(refreshToken, user, token.Expiration, 900);
+           
             return token;
         }
 

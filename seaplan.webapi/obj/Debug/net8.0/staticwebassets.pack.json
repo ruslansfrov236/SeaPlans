@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/assets/image/7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png",
+      "PackagePath": "staticwebassets/assets/image/7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png"
+    },
+    {
+      "Id": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/assets/image/9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png",
+      "PackagePath": "staticwebassets/assets/image/9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png"
+    },
+    {
+      "Id": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/assets/image/ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png",
+      "PackagePath": "staticwebassets/assets/image/ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.seaplan.webapi.props",
+      "PackagePath": "build\\seaplan.webapi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.seaplan.webapi.props",
+      "PackagePath": "buildMultiTargeting\\seaplan.webapi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.seaplan.webapi.props",
+      "PackagePath": "buildTransitive\\seaplan.webapi.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.seaplan.webapi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

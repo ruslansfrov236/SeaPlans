@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "P2BhlHqk0BeGEXT/HGtmgL/53MaSTBkPy1RQPf02F8o=",
+  "Hash": "8c4Oy2OnQjA0FzeMXJZZ9EVltZwgCBc95UBU6TYzdA0=",
   "Source": "seaplan.webapi",
   "BasePath": "_content/seaplan.webapi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "seaplan.webapi/wwwroot",
+      "Source": "seaplan.webapi",
+      "ContentRoot": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/",
+      "BasePath": "_content/seaplan.webapi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/assets/image/7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png",
+      "SourceId": "seaplan.webapi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/",
+      "BasePath": "_content/seaplan.webapi",
+      "RelativePath": "assets/image/7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/image/7e8417eb-dbbe-4760-8f60-0568f1e78786_Screenshot from 2025-03-08 16-43-38.png"
+    },
+    {
+      "Identity": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/assets/image/9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png",
+      "SourceId": "seaplan.webapi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/",
+      "BasePath": "_content/seaplan.webapi",
+      "RelativePath": "assets/image/9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/image/9b932ff4-1fab-4fc9-8bab-7ddc11ccfe68_Screenshot from 2025-03-08 16-43-38.png"
+    },
+    {
+      "Identity": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/assets/image/ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png",
+      "SourceId": "seaplan.webapi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/ruslan/Documents/SeaPlans/seaplan.webapi/wwwroot/",
+      "BasePath": "_content/seaplan.webapi",
+      "RelativePath": "assets/image/ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/image/ed129aa0-345d-4d24-b944-2b04194ed75a_unnamed.png"
+    }
+  ]
 }
